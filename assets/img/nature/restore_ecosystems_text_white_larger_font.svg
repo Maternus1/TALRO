@@ -1,0 +1,10 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path id="circlePath" d="M 200, 200 m -150, 0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0" />
+  </defs>
+  <text font-size="28" fill="white" font-family="Arial">
+    <textPath href="#circlePath" startOffset="0%">
+      RESTORE ECOSYSTEMS - SECURE AND SUSTAIN BIODIVERSITY AND LIVELIHOOD
+    </textPath>
+  </text>
+</svg>
