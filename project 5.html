@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
   </head>
   <body>
     <!-- Start Preloader -->
@@ -31,13 +33,13 @@
     </div>
     <!-- End Preloader -->
     <!-- Start Header Section -->
-   <header class="cs_site_header cs_style_1 cs_sticky_header">
+    <header class="cs_site_header cs_style_1 cs_heading_color cs_sticky_header cs_white_bg">
       <div class="cs_main_header">
         <div class="container">
           <div class="cs_main_header_in">
             <div class="cs_main_header_left">
               <a class="cs_site_branding" href="index.html">
-                <img src="assets/img/climate-change/T/logo.jpeg" alt="Logo">
+                <img src="assets/img/climate-change/logo.png" alt="Logo">
               </a>
               <style>
                 .cs_site_branding {
@@ -87,7 +89,7 @@
   </style>
 
  </div>
-            <div class="cs_main_header_center">
+           <div class="cs_main_header_right">
               <div class="cs_nav">
                 <ul class="cs_nav_list">
                   <li><a href="index.html">HOME</a></li>
@@ -131,7 +133,7 @@
                       </li>
                     </ul>
                   </li> -->
-                  <li><a href="about.html">ABOUT</a></li>
+                  <!-- <li><a href="about.html">ABOUT</a></li> -->
               
                   <!-- <li><a href="campaigns.html">Campaigns</a></li> -->
                   <li><a href="team.html">OUR TEAM</a></li>
@@ -182,8 +184,6 @@
                   <li><a href="contact.html">CONTACT US</a></li>
                 </ul>
               </div>
-            </div>
-            <div class="cs_main_header_right">
               <button class="cs_hamburger_btn">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0.873006C0.21661 0.229944 0.676907 -0.0137425 1.34028 -0.000204399C2.66024 0.0268719 3.98021 0.00656467 5.30018 0.00656467C6.05832 0.00656467 6.49831 0.446554 6.49831 1.20469C6.49831 2.57204 6.49831 3.94616 6.49831 5.31352C6.49831 6.07165 6.05832 6.50487 5.30018 6.51164C3.98021 6.51164 2.66024 6.49133 1.34028 6.51841C0.676907 6.52518 0.21661 6.28826 0 5.6452C0 4.05447 0 2.46374 0 0.873006Z" fill="currentColor"/>
@@ -291,10 +291,10 @@
     </div>
   </div>
     <!-- End Header Section -->
-    <!-- Start Hero Section -->
-    <section class="cs_page_heading cs_bg_filed cs_center text-center cs_heading_bg cs_zoom_bg" data-src="assets/img/climate-change/projectbg.jpg">
-      <div class="container">
-        <h1 class="cs_fs_51 cs_black_color cs_mb_11">PROJECTS</h1>
+      <!-- Start Hero Section -->
+    <section class="cs_page_heading cs_bg_filed cs_center text-center cs_heading_bg cs_zoom_bg" data-src="assets/img/climate-change/IMG_6307.jpg">
+      <!-- <div class="container">
+        <h1 class="cs_fs_51 cs_black_color cs_mb_11">PROJECTS</h1> -->
         <ol class="breadcrumb">
           <!-- <li class="breadcrumb-item"><a href="index.html">Home</a></li> -->
           <!-- <li class="breadcrumb-item active">Projects</li> -->
@@ -315,7 +315,7 @@
           top: 0; left: 0;
           width: 100%;
           height: 100%;
-          background-image: url('assets/img/climate-change/T/govdocx.jpg');
+          background-image: url('assets/img/climate-change/IMG_6307.jpg');
           background-size: cover;
           background-position: center;
           animation: zoomBackground 20s ease-in-out infinite;
@@ -340,8 +340,8 @@
     <div class="cs_height_150 cs_height_lg_80"></div>
     <div class="container">
     <div class="cs_details_content">
-      <img src="assets/img/climate-change/yetu8.jpg" alt="" class="cs_mb_40">
-      <h2>Reconnaisance Survey and Selected priority sites in Tanzania</h2>
+      <img src="assets/img/climate-change/A team inspecting restoration site.jpg" alt="" class="cs_mb_40">
+      <h2>Supporting informed conservation and development projects</h2>
       <p>TaLRO, funded by Partner für Klima und Natur gGmbH (PfKN), conducted an extensive assessment of Tanzania’s coastal
          and estuarine ecosystems from August 2024 to January 2025. The study covered 1,424 km of coastline across Tanga,
           Coast, Mtwara, and Lindi regions, identifying severe degradation due to deforestation, illegal harvesting,
@@ -396,21 +396,79 @@
           </ul>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <img src="assets/img/climate-change/restore.jpg" alt="">
-        </div>
-        <div class="col-sm-6">
-          <img src="assets/img/climate-change/yetu10.jpg" alt="">
-        </div>
-         <style>
-       .col-sm-6 img {
-          height: 600px;
-          object-fit: cover;
-          width: 600px;
-        }
-        </style>
+       <!-- Image Slider Section Without Container -->
+        <section class="image-slider-section">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide image-card">
+                <img src="assets/img/climate-change/A team inspecting restoration site.jpg" alt="Image 1">
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide image-card">
+                <img src="assets/img/climate-change/Beacon at Kerekese2.jpg" alt="Image 2">
+              </div>
+              <!-- Slide 3 -->
+              <div class="swiper-slide image-card">
+                <img src="assets/img/climate-change/Elikana and Salha at Kisiju.jpg" alt="Image 3">
+              </div>
+              <!-- Slide 4 -->
+              <div class="swiper-slide image-card">
+                <img src="assets/img/climate-change/vegetation sampling.jpg" alt="Image 4">
+              </div>
+               <!-- Slide 5 -->
+              <div class="swiper-slide image-card">
+                <img src="assets/img/climate-change/Sustainability in Mangrove Forests.jpg" alt="Image 5">
+              </div>
+               <!-- Slide 6 -->
+              <div class="swiper-slide image-card">
+                <img src="assets/img/climate-change/Mdimni village2.jpg" alt="Image 6">
+              </div>
+               <!-- Slide 7 -->
+              <div class="swiper-slide image-card">
+                <img src="assets/img/climate-change/Beacon at Kerekese2.jpg" alt="Image 7">
+              </div>
+              <!-- Add more slides if needed -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+              <style>
+                .image-slider-section {
+                  padding: 30px 0;
+                  background-color: #f5f5f5;
+                }
+
+                .image-card {
+                  overflow: hidden;
+                  border-radius: 10px;
+                  transition: transform 0.3s ease-in-out;
+                }
+
+                .image-card img {
+                  width: 100%;
+                  height: 200px; /* Moderate height */
+                  object-fit: cover;
+                  transition: transform 0.4s ease-in-out;
+                }
+
+                .image-card:hover img {
+                  transform: scale(1.05);
+                  cursor: pointer;
+                }
+
+                .swiper-pagination {
+                  margin-top: 10px;
+                  text-align: center;
+                }
+                </style>
+        </section>
+
+
       </div>
+      <br><br>
+
+
       <h2 class="cs_details_content_title">Progress and Achievements</h2>
        <h3 class="cs_fs_28 cs_semibold cs_mb_15">Site Identification</h3>
       <ul>
@@ -549,13 +607,13 @@
               </ul>
             </div>
           </div>
-          <div class="cs_footer_col">
+         <div class="cs_footer_col">
             <div class="cs_footer_widget">
               <h2 class="cs_footer_widget_title cs_fs_21 cs_white_color cs_semibold cs_mb_32">Services</h2>
               <ul class="cs_footer_widget_menu">
-                <li><a href="service 1.html">Eco Friendly Product</a></li>
+                <li><a href="service 1.html">Restoration activities</a></li>
                 <li><a href="service 2.html">Advocacy and Campaign</a></li>
-                <li><a href="service 3.html">Sustainable Gardening</a></li>
+                <li><a href="service 3.html">Sustainable Greening</a></li>
                 <li><a href="service 4.html">Wildlife Saving</a></li>
               </ul>
             </div>
@@ -610,5 +668,30 @@
     <script src="assets/js/gsap.min.js"></script>
    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 20,
+        loop: true,
+        grabCursor: true,
+        simulateTouch: true,
+        touchRatio: 1,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        breakpoints: {
+          320: { slidesPerView: 1 },
+          576: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          992: { slidesPerView: 4 }
+        }
+        });
+    </script>
   </body>
 </html>
