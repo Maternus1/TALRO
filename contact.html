@@ -346,23 +346,72 @@
             <div class="cs_pl_75">
               <h3 class="cs_fs_38 cs_semibold cs_mb_14">Get in Touch with Our Team</h3>
               <p class="cs_mb_46">Feel free to reach out to us via the contact form below, and we'll do our best to respond promptly.</p>
-              <form action="#" class="cs_contact_form">
-                <input type="text" class="cs_form_field cs_mb_25" placeholder="Full name *">
-                <input type="text" class="cs_form_field cs_mb_25" placeholder="Email Address *">
-                <input type="text" class="cs_form_field cs_mb_25" placeholder="Mobile Number *">
-                <textarea class="cs_form_field cs_mb_25" cols="30" rows="4" placeholder="Write your comment *"></textarea>
-                <button class="cs_btn cs_style_1">
-                  Send message
-                  <i>
-                    <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0.5 9L8.5 1M8.5 1L0.5 1M8.5 1L8.5 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                    <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0.5 9L8.5 1M8.5 1L0.5 1M8.5 1L8.5 9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
-                  </i>
-                </button>
+              <form id="contactForm" class="cs_contact_form">
+                <input type="text" name="name" class="cs_form_field cs_mb_25" placeholder="Full name *" required>
+                <input type="email" name="email" class="cs_form_field cs_mb_25" placeholder="Email Address *" required>
+                <input type="text" name="mobile" class="cs_form_field cs_mb_25" placeholder="Mobile Number *" required>
+                <textarea name="message" class="cs_form_field cs_mb_25" cols="30" rows="4" placeholder="Write your comment *" required></textarea>
+               <button type="submit" class="cs_btn cs_style_1" id="submitBtn">
+                <span class="btn-text">Send message</span>
+                <span class="btn-loader" style="display:none;">
+                  <svg width="16" height="16" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="20" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"></circle>
+                  </svg>
+                  Sending...
+                </span>
+              </button>
+
+
+                <div id="formResponse" class="form-response"></div>
               </form>
+                   <style>
+                    .form-response {
+                        margin-top: 15px;
+                        padding: 12px 20px;
+                        border-radius: 8px;
+                        display: none;  /* hidden initially */
+                        font-weight: 500;
+                        font-size: 0.95rem;
+                      }
+
+                      .form-success {
+                        background-color: #d4edda;
+                        color: #155724;
+                        border: 1px solid #c3e6cb;
+                      }
+
+                      .form-error {
+                        background-color: #f8d7da;
+                        color: #721c24;
+                        border: 1px solid #f5c6cb;
+                      }
+
+                      #submitBtn {
+                        position: relative;
+                      }
+
+                      #submitBtn .btn-loader {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 0.95rem;
+                        font-weight: 500;
+                      }
+
+                      #submitBtn .btn-loader svg {
+                        animation: spin 1s linear infinite;
+                      }
+
+                      @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                      }
+                    </style>
+
             </div>
           </div>
         </div>
@@ -551,7 +600,54 @@
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/ripples.min.js"></script>
     <script src="assets/js/gsap.min.js"></script>
-   <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $('#contactForm').on('submit', function(e){
+      e.preventDefault();
+      var form = $(this);
+      var response = $('#formResponse');
+      var submitBtn = $('#submitBtn');
+      var btnText = submitBtn.find('.btn-text');
+      var btnLoader = submitBtn.find('.btn-loader');
+
+      // Show loader
+      btnText.hide();
+      btnLoader.show();
+
+      $.ajax({
+          url: 'send_mail.php',
+          type: 'POST',
+          data: form.serialize(),
+          success: function(data){
+              if(data.includes("Thank you")){
+                  response.removeClass('form-error').addClass('form-success');
+              } else {
+                  response.removeClass('form-success').addClass('form-error');
+              }
+              response.text(data).fadeIn();
+              setTimeout(function(){ response.fadeOut(); }, 5000);
+
+              // Reset button
+              btnLoader.hide();
+              btnText.show();
+
+              form[0].reset();
+          },
+          error: function(){
+              response.removeClass('form-success').addClass('form-error');
+              response.text('Oops! Something went wrong.').fadeIn();
+              setTimeout(function(){ response.fadeOut(); }, 5000);
+
+              // Reset button
+              btnLoader.hide();
+              btnText.show();
+          }
+      });
+  });
+
+    </script>
+
   </body>
 </html>
