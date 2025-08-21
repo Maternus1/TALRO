@@ -374,7 +374,7 @@
                   </a>
                   <div class="cs_card_info">
                     <p class="cs_mb_4">Beekeeping</p>
-                    <h3 class="cs_card_title mb-0 cs_fs_21 cs_semibold">Establishing and managing apiary in Kisarawe District<br><br><br></h3>
+                    <h3 class="cs_card_title mb-0 cs_fs_21 cs_semibold">Establishing and managing apiary in Kisarawe District<br><br><br></h3><br>
                     <a href="project 1.html" class="cs_btn cs_style_2 cs_heading_color">
                     Learn More
                     <i>
@@ -396,7 +396,7 @@
                   </a>
                   <div class="cs_card_info">
                     <p class="cs_mb_4">Restoration</p>
-                    <h3 class="cs_card_title mb-0 cs_fs_21 cs_semibold">Restoring and managing native trees in coastal forests and mangroves<br></h3><br>
+                    <h3 class="cs_card_title mb-0 cs_fs_21 cs_semibold">Restoring and managing native trees in coastal forests and mangroves<br></h3><br><br>
                     <a href="project 2.html" class="cs_btn cs_style_2 cs_heading_color">
                     Learn More
                     <i>
@@ -484,7 +484,7 @@
                   </a>
                   <div class="cs_card_info">
                     <p class="cs_mb_4">Human-Wildlife Coexistence</p>
-                    <h3 class="cs_card_title mb-0 cs_fs_21 cs_semibold">Supporting human-wildlife coexistence through eco-friendly enterprises<br><br></h3>
+                    <h3 class="cs_card_title mb-0 cs_fs_21 cs_semibold">Supporting human-wildlife coexistence through eco-friendly enterprises<br><br></h3><br>
                     <a href="project 6.html" class="cs_btn cs_style_2 cs_heading_color">
                     Learn More
                     <i>
@@ -529,6 +529,149 @@
         background-position: center;
         background-repeat: no-repeat;
       }
+
+     .cs_card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.cs_card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.cs_card_thumb {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+}
+
+.cs_card_thumb img {
+  width: 300px;
+  height: 400px;
+  transition: transform 0.4s ease;
+}
+
+.cs_card_thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cs_card:hover .cs_card_thumb img {
+  transform: scale(1.05);
+}
+
+.cs_card:hover .cs_card_thumb::after {
+  opacity: 1;
+}
+
+/* Card body text */
+.cs_card_body {
+  padding: 20px;
+}
+
+.cs_card_title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.cs_card_subtitle {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Buttons */
+.cs_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 1px solid #2dbd40;
+  color: #2dbd40;
+  background: transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cs_btn:hover {
+  background: #2dbd40;
+  color: #fff;
+}
+
+.cs_btn i svg {
+  transition: transform 0.3s ease;
+}
+
+.cs_btn:hover i svg {
+  transform: translateX(4px);
+}
+
+/* Slider arrows */
+.cs_slider_arrows .cs_left_arrow,
+.cs_slider_arrows .cs_right_arrow {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.cs_slider_arrows .cs_left_arrow:hover,
+.cs_slider_arrows .cs_right_arrow:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Section background with overlay */
+.cs_projects_bg {
+  position: relative;
+  background-attachment: fixed;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.cs_projects_bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .cs_card_title { font-size: 1.1rem; }
+  .cs_card_subtitle { font-size: 0.9rem; }
+}
+
+@media (max-width: 768px) {
+  .cs_card_thumb img { height: 300px; object-fit: cover; }
+  .cs_card { border-radius: 12px; }
+}
       </style>
       
     </section>
